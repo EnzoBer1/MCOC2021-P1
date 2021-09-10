@@ -1,5 +1,5 @@
 import numpy as np
-
+#Hola probando
 from constantes import g_, ρ_acero, E_acero
 
 
@@ -30,8 +30,10 @@ class Barra(object):
         xj = reticulado.xyz[nj,:]
 
         print(f"Barra {ni} a {nj} xi = {xi} xj = {xj}")
-
-        return 0
+        
+        Largo=np.lignal.norm(xi-xj)
+        
+        return Largo
 
     def calcular_peso(self, reticulado):
         """Devuelve el largo de la barra. 
@@ -39,13 +41,13 @@ class Barra(object):
         xj : Arreglo numpy de dimenson (3,) con coordenadas del nodo j
         """
         
-        """Implementar"""	
+        Area=self.seccion.Area()
+        Largo=self.calcular_largo(reticulado)
+        Peso=Area*Largo*ρ_acero*g_
         
-        return 0
+        return(Peso)
 
-
-
-
+        
     def obtener_rigidez(self, ret):
         
         """Implementar"""	
