@@ -133,19 +133,19 @@ class Reticulado(object):
         return 0
 
 
-
-
-
-
-
-    def __str__(self):
-
-        s = "Soy un reticulado :)"
-
-        s += "\n"
-        
-        s += str(self.xyz[0 : self.Nnodos,:])
-
-        return s
+     def __str__(self):
+        s = 'nodos:\n'
+        for i in range(len(self.xyz)):
+            s += f'{i} : ({self.obtener_coordenada_nodal(i)})\n'
+        s += 'barras:\n'
+        for i in range(len(self.barras)):
+            s += f'{i} : {self.barras[i].ni,self.barras[i].nj}\n'
+        return(s)
     
-print(Reticulado())
+
+
+
+
+    
+    
+
