@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep 10 08:59:59 2021
+
+@author: juanp
+"""
+
 import numpy as np
 from scipy.linalg import solve
 
@@ -16,13 +23,12 @@ class Reticulado(object):
         self.barras = []
         self.cargas = {}
         self.restricciones = {}
-        """Implementar"""	
-        wfmie
+   
+        
 
 
     def agregar_nodo(self, x, y, z=0):
         
-        """Implementar"""	
 
         print(f"Quiero agregar un nodo en ({x} {y} {z})")
         numero_de_nodo_actual = self.Nnodos
@@ -41,16 +47,20 @@ class Reticulado(object):
 
     def obtener_coordenada_nodal(self, n):
         
-        """Implementar"""	
+        coordenada_nodal = self.xyz[n]
         
-        return 0
+        print(f"{n}: {coordenada_nodal}")
+        
+        return (coordenada_nodal)
 
     def calcular_peso_total(self):
         
-        """Implementar"""	
-        
-        return 0
-
+        peso_total = 0
+        for i in self.barras:
+            peso_total += i.calcular_peso(self)
+            
+        return peso_total
+      
     def obtener_nodos(self):
         
         return self.xyz
@@ -74,7 +84,7 @@ class Reticulado(object):
         return 0
 
 
-    def ensamblar_sistema(self):
+    def ensamblar_sistema(self, factor_peso_propio=0.):
         
         """Implementar"""	
         
@@ -137,3 +147,5 @@ class Reticulado(object):
         s += str(self.xyz[0 : self.Nnodos,:])
 
         return s
+    
+print(Reticulado())
