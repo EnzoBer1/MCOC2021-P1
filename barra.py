@@ -31,7 +31,7 @@ class Barra(object):
 
         print(f"Barra {ni} a {nj} xi = {xi} xj = {xj}")
         
-        Largo=np.lignal.norm(xi-xj)
+        Largo=np.linalg.norm(xi-xj)
         
         return Largo
 
@@ -41,7 +41,7 @@ class Barra(object):
         xj : Arreglo numpy de dimenson (3,) con coordenadas del nodo j
         """
         
-        Area=self.seccion.Area()
+        Area=self.seccion.area()
         Largo=self.calcular_largo(reticulado)
         Peso=Area*Largo*ρ_acero*g_
         
