@@ -17,7 +17,7 @@ class Reticulado(object):
         self.cargas = {}
         self.restricciones = {}
         """Implementar"""	
-        
+        wfmie
 
 
     def agregar_nodo(self, x, y, z=0):
