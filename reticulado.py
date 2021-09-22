@@ -145,9 +145,23 @@ class Reticulado(object):
 
     def resolver_sistema(self):
         
-        """Implementar"""	
+        gdl_libres = np.arrange(self.Nnodos*3)
+        gdl_fijos = []
         
-        return 0
+        kff = self.K[np.ix_(gdl_libres,gdl_libres)]
+        kcc = self.K[np.ix_(gdl_fijos,gdl_fijos)]
+        kcf = self.K[np.ix_(gdl_fijos,gdl_libres)]
+        kfc = self.K[np.ix_(gdl_libres,gdl_fijos)]
+        
+        uc = self.u[gdl_fijos]
+        
+        Ff = self.F[gdl_libres] - kfc@uc
+        self.u[gdl_libres] = linalg.solve(kff,Ff)
+
+        R = kcf@self.u[gdl_libres] + kcc@uc - self.F[gdl_fijos]
+
+        return 0	
+        
 
     def obtener_desplazamiento_nodal(self, n):
         
