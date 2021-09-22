@@ -110,6 +110,17 @@ class Reticulado(object):
             ke = e.obtener_rigidez(self)
             fe = e.obtener_vector_de_cargas(self)
             
+            if factor_peso_propio != [0.,0.,0.]:
+                
+                    valor = fe[2]
+                    x = sqtr((factor_peso_propio[0])**2)
+                    y = sqtr((factor_peso_propio[1])**2)
+                    z = sqtr((factor_peso_propio[2])**2)   
+                    fe = [x*valor, y*valor, z*valor, x*valor, y*valor, z*valor ]
+                    
+            else:
+                fe = np.zeros(6)
+                
             for i in range (6):
                 p = d[i]
                 for j in range (6):
@@ -127,7 +138,7 @@ class Reticulado(object):
                 gdl = carga[0]
                 valor = carga[1]
                 gdl_global = node*3 + gdl
-                self.f[node*3 + gdl] = valor
+                self.f[gdl_global] = valor
         
         return 0
 
