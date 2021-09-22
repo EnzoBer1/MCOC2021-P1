@@ -100,7 +100,7 @@ class Reticulado(object):
         
         n = self.Nnodos*3 + 2
         self.K = np.zeros((n,n)) 
-        self.f = np.zeros(n) #nodo [-1]+2 (dimension de K y f)
+        self.f = np.zeros(n) 
         self.u = np.zeros(n)
         
         
