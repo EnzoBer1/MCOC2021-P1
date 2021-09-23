@@ -57,6 +57,8 @@ class Barra(object):
         
     def obtener_rigidez(self, ret):
         
+        L = self.calcular_largo(ret)
+        
         ni = self.ni
         nj = self.nj
 
@@ -71,9 +73,9 @@ class Barra(object):
         costhetay=Ly/self.calcular_largo(ret)
         costhetaz=Lz/self.calcular_largo(ret)
         
-        T=np.array([-costhetax, -costhetay, -costhetaz, costhetax, costhetay, costhetax])
+        T=np.array([[-costhetax, -costhetay, -costhetaz, costhetax, costhetay, costhetaz]])
         
-        Ke=self.seccion.area()*E_acero/self.calcular_largo(ret)*T.T@T
+        Ke=self.seccion.area()*E_acero/L*(T.T@T)
         
         return Ke
 
