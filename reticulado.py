@@ -145,20 +145,53 @@ class Reticulado(object):
 
     def resolver_sistema(self):
         
-        gdl_libres = np.arrange(self.Nnodos*3)
+       Ngdl = self.Nnodos * self.Ndimensiones
+        gdl_libres = np.arange(Ngdl)
         gdl_fijos = []
-        
-        kff = self.K[np.ix_(gdl_libres,gdl_libres)]
-        kcc = self.K[np.ix_(gdl_fijos,gdl_fijos)]
-        kcf = self.K[np.ix_(gdl_fijos,gdl_libres)]
-        kfc = self.K[np.ix_(gdl_libres,gdl_fijos)]
-        
-        uc = self.u[gdl_fijos]
-        
-        Ff = self.F[gdl_libres] - kfc@uc
-        self.u[gdl_libres] = linalg.solve(kff,Ff)
 
-        R = kcf@self.u[gdl_libres] + kcc@uc - self.F[gdl_fijos]
+        #Pre-llenar el vector u
+
+        for nodo in self.restricciones:
+            for restriccion in self.restricciones[nodo]:
+                gdl = restriccion[0]
+                valor = restriccion[1]
+
+                gdl_global = self.Ndimensiones*nodo + gdl
+                self.u[gdl_global] += valor
+
+                gdl_fijos.append(gdl_global)
+
+        #gdl_restringidos encuentro  gdl_libres
+        gdl_fijos = np.array(gdl_fijos)
+        gdl_libres = np.setdiff1d(gdl_libres, gdl_fijos)
+
+
+        for nodo in self.cargas:
+            for carga in self.cargas[nodo]:
+                gdl = carga[0]
+                valor = carga[1]
+                gdl_global = self.Ndimensiones*nodo + gdl
+                self.f[gdl_global] = valor
+
+
+        #Particionar matriz:
+
+        kff = self.K[np.ix_(gdl_libres, gdl_libres)]
+        kfc = self.K[np.ix_(gdl_libres, gdl_fijos)]
+        kcf = kfc.T
+        kcc = self.K[np.ix_(gdl_fijos, gdl_fijos)]
+ 
+        uf = self.u[gdl_libres]
+        uc = self.u[gdl_fijos]
+
+        ff = self.f[gdl_libres]
+        fc = self.f[gdl_fijos]
+
+        #Solucionar Kff uf = ff
+        uf = solve(kff, ff - kfc @ uc)
+
+        self.u[gdl_libres] = uf
+
 
         return 0	
         
