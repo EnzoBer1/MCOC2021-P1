@@ -94,10 +94,8 @@ class Reticulado(object):
         return 0
 
 
-    def ensamblar_sistema(self, factorpeso_propio=0.):
-        
-        """Implementar"""
-        
+   def ensamblar_sistema(self, factor_peso_propio = [0.,0.,0.]):
+                
         n = self.Nnodos*3 + 2
         self.K = np.zeros((n,n)) 
         self.f = np.zeros(n) 
@@ -113,10 +111,10 @@ class Reticulado(object):
             if factor_peso_propio != [0.,0.,0.]:
                 
                     valor = fe[2]
-                    x = sqtr((factor_peso_propio[0])**2)
-                    y = sqtr((factor_peso_propio[1])**2)
-                    z = sqtr((factor_peso_propio[2])**2)   
-                    fe = [x*valor, y*valor, z*valor, x*valor, y*valor, z*valor ]
+                    x = ((factor_peso_propio[0])*2)*0.5
+                    y = ((factor_peso_propio[1])*2)*0.5
+                    z = ((factor_peso_propio[2])*2)*0.5
+                    fe = [x*valor, y*valor, z*valor, x*valor, y*valor, z*valor]
                     
             else:
                 fe = np.zeros(6)
@@ -140,7 +138,7 @@ class Reticulado(object):
                 gdl_global = node*3 + gdl
                 self.f[gdl_global] = valor
         
-        return 0
+    
 
 
     def resolver_sistema(self):
