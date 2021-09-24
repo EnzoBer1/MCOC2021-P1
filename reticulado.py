@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Sep 10 08:59:59 2021
-
 @author: juanp
 """
 
 import numpy as np
 from scipy.linalg import solve
+import scipy.linalg as linalg
 
 class Reticulado(object):
+    
     """Define un reticulado"""
     __NNodosInit__ = 100
 
@@ -18,17 +19,17 @@ class Reticulado(object):
         
         print("Constructor de Reticulado")
         
-        self.xyz = np.zeros((Reticulado.__NNodosInit__,3), dtype=np.double)
+        self.xyz = np.zeros((Reticulado.__NNodosInit__,3), dtype = np.double)
         self.Nnodos = 0
         self.barras = []
         self.cargas = {}
         self.restricciones = {}
-   
-        
+        self.Ndimensiones = 2
 
 
     def agregar_nodo(self, x, y, z=0):
         
+        self.xyz.resize((self.Nnodos+1, 3))
 
         print(f"Quiero agregar un nodo en ({x} {y} {z})")
         numero_de_nodo_actual = self.Nnodos
@@ -36,6 +37,9 @@ class Reticulado(object):
         self.xyz[numero_de_nodo_actual,:] = [x, y, z]
 
         self.Nnodos += 1
+        
+        if z != 0:
+            self.NNdimensiones = 3
         
         return 0
 
@@ -73,7 +77,6 @@ class Reticulado(object):
 
     def agregar_restriccion(self, nodo, gdl, valor=0.0):
         
-        """Implementar"""	
         
         if nodo in self.restricciones:
             self.restricciones[nodo].append([gdl,valor])
@@ -83,10 +86,9 @@ class Reticulado(object):
         return 0
 
     def agregar_fuerza(self, nodo, gdl, valor):
+        	
         
-        """Implementar"""	
-        
-         if nodo in self.cargas:
+        if nodo in self.cargas:
             self.cargas[nodo].append([gdl,valor])
         else:
             self.cargas[nodo] = [[gdl,valor]]	
@@ -94,9 +96,9 @@ class Reticulado(object):
         return 0
 
 
-   def ensamblar_sistema(self, factor_peso_propio = [0.,0.,0.]):
+    def ensamblar_sistema(self, factor_peso_propio = [0.,0.,0.]):
                 
-        n = self.Nnodos*3 + 2
+        n = self.Nnodos*3 
         self.K = np.zeros((n,n)) 
         self.f = np.zeros(n) 
         self.u = np.zeros(n)
@@ -111,9 +113,9 @@ class Reticulado(object):
             if factor_peso_propio != [0.,0.,0.]:
                 
                     valor = fe[2]
-                    x = ((factor_peso_propio[0])*2)*0.5
-                    y = ((factor_peso_propio[1])*2)*0.5
-                    z = ((factor_peso_propio[2])*2)*0.5
+                    x = ((factor_peso_propio[0])**2)**0.5
+                    y = ((factor_peso_propio[1])**2)**0.5
+                    z = ((factor_peso_propio[2])**2)**0.5
                     fe = [x*valor, y*valor, z*valor, x*valor, y*valor, z*valor]
                     
             else:
@@ -138,12 +140,15 @@ class Reticulado(object):
                 gdl_global = node*3 + gdl
                 self.f[gdl_global] = valor
         
-    
+        return 0
+
+
+
 
 
     def resolver_sistema(self):
         
-       Ngdl = self.Nnodos * self.Ndimensiones
+        Ngdl = self.Nnodos * self.Ndimensiones
         gdl_libres = np.arange(Ngdl)
         gdl_fijos = []
 
@@ -229,7 +234,7 @@ class Reticulado(object):
         return 0
 
 
-     def __str__(self):
+    def __str__(self):
         s = 'nodos:\n'
         for i in range(len(self.xyz)):
             s += f'{i} : ({self.obtener_coordenada_nodal(i)})\n'
@@ -237,11 +242,4 @@ class Reticulado(object):
         for i in range(len(self.barras)):
             s += f'{i} : {self.barras[i].ni,self.barras[i].nj}\n'
         return(s)
-    
-
-
-
-
-    
-    
 
