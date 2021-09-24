@@ -104,7 +104,7 @@ class Barra(object):
         
         u_e=np.array([ret.u[3*ni], ret.u[3*ni+1], ret.u[3*ni+2], ret.u[3*nj], ret.u[3*nj+1], ret.u[3*nj+2]])
         
-        se=self.seccion.area()*E_acero/self.calcular_largo(ret)*T*u_e
+        se=self.seccion.area()*E_acero/self.calcular_largo(ret)*(T.T@u_e)
         
         return se
 
