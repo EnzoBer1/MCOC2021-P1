@@ -1,12 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 21 19:56:48 2021
-
-@author: sandramunozavila
-"""
 import numpy as np
-#Hola probando
+
 from constantes import g_, ρ_acero, E_acero
 
 
@@ -37,10 +30,8 @@ class Barra(object):
         xj = reticulado.xyz[nj,:]
 
         print(f"Barra {ni} a {nj} xi = {xi} xj = {xj}")
-        
-        Largo=np.linalg.norm(xi-xj)
-        
-        return Largo
+
+        return 0
 
     def calcular_peso(self, reticulado):
         """Devuelve el largo de la barra. 
@@ -48,88 +39,84 @@ class Barra(object):
         xj : Arreglo numpy de dimenson (3,) con coordenadas del nodo j
         """
         
-        Area=self.seccion.area()
-        Largo=self.calcular_largo(reticulado)
-        Peso=Area*Largo*ρ_acero*g_
+        """Implementar"""	
         
-        return(Peso)
+        return 0
 
-        
+
+
+
     def obtener_rigidez(self, ret):
         
-        L = self.calcular_largo(ret)
+        """Implementar"""	
         
-        ni = self.ni
-        nj = self.nj
-
-        xi = ret.xyz[ni,:]
-        xj = ret.xyz[nj,:]
-        
-        Lx=(xj[0]-xi[0])
-        Ly=(xj[1]-xi[1])
-        Lz=(xj[2]-xi[2])
-        
-        costhetax=Lx/self.calcular_largo(ret)
-        costhetay=Ly/self.calcular_largo(ret)
-        costhetaz=Lz/self.calcular_largo(ret)
-        
-        T=np.array([[-costhetax, -costhetay, -costhetaz, costhetax, costhetay, costhetaz]])
-        
-        Ke=self.seccion.area()*E_acero/L*(T.T@T)
-        
-        return Ke
+        return 0
 
     def obtener_vector_de_cargas(self, ret):
         
-        return (self.calcular_peso(ret))/2*np.array([0,1,0,1])
+        """Implementar"""	
+        
+        return 0
 
 
     def obtener_fuerza(self, ret):
         
-        ni = self.ni
-        nj = self.nj
-
-        xi = ret.xyz[ni,:]
-        xj = ret.xyz[nj,:]
+        """Implementar"""	
         
-        Lx=(xj[0]-xi[0])
-        Ly=(xj[1]-xi[1])
-        Lz=(xj[2]-xi[2])
-        
-        costhetax=Lx/self.calcular_largo(ret)
-        costhetay=Ly/self.calcular_largo(ret)
-        costhetaz=Lz/self.calcular_largo(ret)
-        
-        T=np.array([-costhetax, -costhetay, -costhetaz, costhetax, costhetay, costhetax])
-        
-        u_e=np.array([ret.u[3*ni], ret.u[3*ni+1], ret.u[3*ni+2], ret.u[3*nj], ret.u[3*nj+1], ret.u[3*nj+2]])
-        
-        se=self.seccion.area()*E_acero/self.calcular_largo(ret)*(T.T@u_e)
-        
-        return se
+        return 0
 
 
 
 
     def chequear_diseño(self, Fu, ret, ϕ=0.9):
         
-        """Implementar"""	
+        area = self.seccion.area()
+        peso = self.seccion.peso()
+        inercia_xx = self.seccion.inercia_xx()
+        inercia_yy = self.seccion.inercia_yy()
+        nombre = self.seccion.nombre()
         
-        return 0
+        #Resistencia nominal
+        Fn = area * σy_acero
 
+        #Revisar resistencia nominal
+        if abs(Fu) > ϕ*Fn:
+            print(f"Resistencia nominal Fu = {Fu} ϕ*Fn = {ϕ*Fn}")
+            return False
 
+        L = self.calcular_largo(ret)
 
+        #Inercia es la minima
+        I = min(inercia_xx, inercia_yy)
+        i = np.sqrt(I/area)
 
+        #Revisar radio de giro
+        if Fu >= 0 and L/i > 300:
+            print(f"Esbeltez Fu = {Fu} L/i = {L/i}")
+            return False
 
-    def obtener_factor_utilizacion(self, Fu, ϕ=0.9):
+        #Revisar carga critica de pandeo
+        if Fu < 0:  #solo en traccion
+            Pcr = np.pi**2*E_acero*I / L**2
+            if abs(Fu) > Pcr:
+                print(f"Pandeo Fu = {Fu} Pcr = {Pcr}")
+                return False
         
-        """Implementar"""	
+        #Si pasa todas las pruebas, estamos bien
+        return True
         
-        return 0
 
 
     def rediseñar(self, Fu, ret, ϕ=0.9):
         
         """Implementar"""	
         
-        return 0
+
+
+
+
+    def obtener_factor_utilizacion(self, Fu, ϕ=0.9):
+        A = self.seccion.area()
+        Fn = A * σy_acero
+
+        return abs(Fu) / (ϕ*Fn)
