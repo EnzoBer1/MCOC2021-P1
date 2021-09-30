@@ -15,8 +15,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 
-
-
 #Opciones para nodos
 opc_nodos_default = {
     "marcador_nodos": "o", 
@@ -26,6 +24,7 @@ opc_nodos_default = {
     "usar_posicion_deformada": False,
     "factor_amplificacion_deformada": 1.,
     "datos_desplazamientos_nodales": None,
+    "ver_cargas": False
 }
 
 #Opciones para nodos
@@ -57,7 +56,7 @@ def graficar_nodos(ret, fig, opciones):
 
     # plt.figure(fig)
     # Nodos
-    xyz = ret.obtener_nodos()
+    xyz = ret.obtener_nodos().copy()
 
     if opciones["usar_posicion_deformada"]: 
         if opciones["datos_desplazamientos_nodales"] is None:
@@ -82,6 +81,24 @@ def graficar_nodos(ret, fig, opciones):
             ax.text(xyz[n,0], xyz[n,1], xyz[n,2], f"{n}", color=opciones['color_nodos'])
 
 
+    if opciones["ver_cargas"]:
+        x = []
+        y = []
+        z = []
+        lx = []
+        ly = []
+        lz = []
+        for node in ret.cargas:
+            for gdl, val in ret.cargas[node]:
+                x.append(ret.xyz[node, 0])
+                y.append(ret.xyz[node, 1])
+                z.append(ret.xyz[node, 2])
+                lx.append((gdl == 0 ) * val)
+                ly.append((gdl == 1 ) * val)
+                lz.append((gdl == 2 ) * val)
+        ax.quiver(x,y,z,lx,ly,lz,normalize=True)
+
+
 def graficar_barras(ret, fig, opciones):
 
     ax = fig.gca()
@@ -90,7 +107,7 @@ def graficar_barras(ret, fig, opciones):
         if key not in opciones:
             opciones[key] = opc_barras_default[key]
 
-    xyz = ret.obtener_nodos()[:,0:3]
+    xyz = ret.obtener_nodos()[:,0:3].copy()
 
     if opciones["usar_posicion_deformada"]: 
         if opciones["datos_desplazamientos_nodales"] is None:
@@ -170,7 +187,8 @@ def ver_reticulado_3d(ret, fig=1,
     nueva_figura=True,
     tamaño_nueva_figura = [8, 6],
     zoom = 100,
-    deshabilitar_ejes=False
+    deshabilitar_ejes=False,
+    titulo=""
     ):
 
     if nueva_figura:
@@ -223,6 +241,8 @@ def ver_reticulado_3d(ret, fig=1,
         ax.yaxis._axinfo["grid"]['color'] =  (1,1,1,0)
         ax.zaxis._axinfo["grid"]['color'] =  (1,1,1,0)
         ax.set_axis_off()
+
+    plt.title(titulo)
 
     if llamar_show:
         plt.show()
