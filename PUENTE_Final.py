@@ -78,7 +78,7 @@ ret.agregar_nodo(x0+9*L ,0, y0+L)    # 38
 ret.agregar_nodo(x0+10*L ,0, y0+L)     # 39 
 ret.agregar_nodo(x0+11*L ,0, y0+L)     # 40
 ret.agregar_nodo(x0+12*L ,0, y0+L)     # 41
-ret.agregar_nodo(x0+13*L ,0, y0+L)    # 42      ######### +1 todos los nodos
+ret.agregar_nodo(x0+13*L ,0, y0+L)    # 42      
 ret.agregar_nodo(x0+14*L ,0, y0+L)     # 43 
 ret.agregar_nodo(x0+15*L ,0, y0+L)    # 44 
 ret.agregar_nodo(x0+16*L ,0, y0+L)     # 45 
@@ -96,78 +96,86 @@ ret.agregar_nodo(x0+27*L ,0, y0+L)  #56
 ret.agregar_nodo(x0+28*L ,0, y0+L)  #57
 ret.agregar_nodo(x0+29*L ,0, y0+L)  ###59
 
-ret.agregar_nodo(x0 ,H, y0)         # 58
-ret.agregar_nodo(x0 + 1*L,H, y0)    # 59
+ret.agregar_nodo(x0 ,H, y0)         # 60
+ret.agregar_nodo(x0 + 1*L,H, y0)    # 61
 ret.agregar_nodo(x0+2*L ,H, y0)     # 60
-ret.agregar_nodo(x0+3*L ,H, y0)     # 61
-ret.agregar_nodo(x0+4*L ,H, y0)    # 62
-ret.agregar_nodo(x0+5*L ,H, y0)     # 63 
-ret.agregar_nodo(x0+6*L ,H, y0)     # 64
-ret.agregar_nodo(x0+7*L ,H, y0)      # 65 
-ret.agregar_nodo(x0+8*L ,H, y0)     # 66
-ret.agregar_nodo(x0+9*L ,H, y0)    # 67
-ret.agregar_nodo(x0+10*L ,H, y0)     #68              ########### +2 todos los nodos
-ret.agregar_nodo(x0+11*L ,H, y0)     # 69
-ret.agregar_nodo(x0+12*L ,H, y0)     # 70
-ret.agregar_nodo(x0+13*L ,H, y0)    # 71 
-ret.agregar_nodo(x0+14*L ,H, y0)     # 72 
-ret.agregar_nodo(x0+15*L ,H, y0)    # 73
-ret.agregar_nodo(x0+16*L ,H, y0)     # 74 
-ret.agregar_nodo(x0+17*L ,H, y0)     # 75
-ret.agregar_nodo(x0+18*L ,H, y0)     # 76 
-ret.agregar_nodo(x0+19*L ,H, y0)     # 76 
-
-ret.agregar_nodo(x0+20*L ,H, y0)  # 77 
-ret.agregar_nodo(x0+21*L ,H, y0)  #78
-ret.agregar_nodo(x0+22*L ,H, y0)  #79
-ret.agregar_nodo(x0+23*L ,H, y0)  #80
-ret.agregar_nodo(x0+24*L ,H, y0)  #81
-ret.agregar_nodo(x0+25*L ,H, y0)  #82
-ret.agregar_nodo(x0+26*L ,H, y0)  #83
-ret.agregar_nodo(x0+27*L ,H, y0)  #84
-ret.agregar_nodo(x0+28*L ,H, y0)  #85
+ret.agregar_nodo(x0+3*L ,H, y0)     # 62
+ret.agregar_nodo(x0+4*L ,H, y0)    # 63
+ret.agregar_nodo(x0+5*L ,H, y0)     # 64 
+ret.agregar_nodo(x0+6*L ,H, y0)     # 65
+ret.agregar_nodo(x0+7*L ,H, y0)      # 66 
+ret.agregar_nodo(x0+8*L ,H, y0)     # 67
+ret.agregar_nodo(x0+9*L ,H, y0)    # 68
+ret.agregar_nodo(x0+10*L ,H, y0)     #69            
+ret.agregar_nodo(x0+11*L ,H, y0)     # 70
+ret.agregar_nodo(x0+12*L ,H, y0)     # 71
+ret.agregar_nodo(x0+13*L ,H, y0)    # 72
+ret.agregar_nodo(x0+14*L ,H, y0)     # 73 
+ret.agregar_nodo(x0+15*L ,H, y0)    # 74
+ret.agregar_nodo(x0+16*L ,H, y0)     # 75 
+ret.agregar_nodo(x0+17*L ,H, y0)     # 76
+ret.agregar_nodo(x0+18*L ,H, y0)     # 77 
+ret.agregar_nodo(x0+19*L ,H, y0)     # 78 
+ret.agregar_nodo(x0+20*L ,H, y0)  # 79
+ret.agregar_nodo(x0+21*L ,H, y0)  #80
+ret.agregar_nodo(x0+22*L ,H, y0)  #81
+ret.agregar_nodo(x0+23*L ,H, y0)  #82
+ret.agregar_nodo(x0+24*L ,H, y0)  #83
+ret.agregar_nodo(x0+25*L ,H, y0)  #84
+ret.agregar_nodo(x0+26*L ,H, y0)  #85
+ret.agregar_nodo(x0+27*L ,H, y0)  #86
+ret.agregar_nodo(x0+28*L ,H, y0)  #87
 ret.agregar_nodo(x0+29*L ,H, y0) #88
 
 
-ret.agregar_nodo(x0 ,H, y0+L)         # 86
-ret.agregar_nodo(x0 + 1*L,H, y0+L)    # 87
-ret.agregar_nodo(x0+2*L ,H, y0+L)     # 88
-ret.agregar_nodo(x0+3*L ,H, y0+L)     # 89
-ret.agregar_nodo(x0+4*L ,H, y0+L)    # 90
-ret.agregar_nodo(x0+5*L ,H, y0+L)     # 91 
-ret.agregar_nodo(x0+6*L ,H, y0+L)     # 92
-ret.agregar_nodo(x0+7*L ,H, y0+L)      # 93 
-ret.agregar_nodo(x0+8*L ,H, y0+L)     # 94 
-ret.agregar_nodo(x0+9*L ,H, y0+L)    # 95       ####### +3
-ret.agregar_nodo(x0+10*L ,H, y0+L)     # 96 
-ret.agregar_nodo(x0+11*L ,H, y0+L)     # 97
-ret.agregar_nodo(x0+12*L ,H, y0+L)     # 98
-ret.agregar_nodo(x0+13*L ,H, y0+L)    # 99
-ret.agregar_nodo(x0+14*L ,H, y0+L)     # 100 
-ret.agregar_nodo(x0+15*L ,H, y0+L)    # 101
-ret.agregar_nodo(x0+16*L ,H, y0+L)     # 102 
-ret.agregar_nodo(x0+17*L ,H, y0+L)     # 103
-ret.agregar_nodo(x0+18*L ,H, y0+L)     # 104
-ret.agregar_nodo(x0+19*L ,H, y0+L)     # 104
-ret.agregar_nodo(x0+20*L ,H, y0+L)  # 105
-ret.agregar_nodo(x0+21*L ,H, y0+L)  #106
-ret.agregar_nodo(x0+22*L ,H, y0+L)  #107
-ret.agregar_nodo(x0+23*L ,H, y0+L)  #108
-ret.agregar_nodo(x0+24*L ,H, y0+L)  #109
-ret.agregar_nodo(x0+25*L ,H, y0+L)  #110
-ret.agregar_nodo(x0+26*L ,H, y0+L)  #111
-ret.agregar_nodo(x0+27*L ,H, y0+L)  #112
-ret.agregar_nodo(x0+28*L ,H, y0+L)  #113
-ret.agregar_nodo(x0+29*L ,H, y0+L)  ##### 117
+ret.agregar_nodo(x0 ,H, y0+L)         # 89
+ret.agregar_nodo(x0 + 1*L,H, y0+L)    # 90
+ret.agregar_nodo(x0+2*L ,H, y0+L)     # 91
+ret.agregar_nodo(x0+3*L ,H, y0+L)     # 92
+ret.agregar_nodo(x0+4*L ,H, y0+L)    # 93
+ret.agregar_nodo(x0+5*L ,H, y0+L)     # 94 
+ret.agregar_nodo(x0+6*L ,H, y0+L)     # 95
+ret.agregar_nodo(x0+7*L ,H, y0+L)      # 96 
+ret.agregar_nodo(x0+8*L ,H, y0+L)     # 97
+ret.agregar_nodo(x0+9*L ,H, y0+L)    # 98      ####### +3
+ret.agregar_nodo(x0+10*L ,H, y0+L)     # 99 
+ret.agregar_nodo(x0+11*L ,H, y0+L)     # 100
+ret.agregar_nodo(x0+12*L ,H, y0+L)     # 101
+ret.agregar_nodo(x0+13*L ,H, y0+L)    # 102
+ret.agregar_nodo(x0+14*L ,H, y0+L)     # 103 
+ret.agregar_nodo(x0+15*L ,H, y0+L)    # 104
+ret.agregar_nodo(x0+16*L ,H, y0+L)     # 105 
+ret.agregar_nodo(x0+17*L ,H, y0+L)     # 106
+ret.agregar_nodo(x0+18*L ,H, y0+L)     # 107
+ret.agregar_nodo(x0+19*L ,H, y0+L)     # 108
+ret.agregar_nodo(x0+20*L ,H, y0+L)  # 109
+ret.agregar_nodo(x0+21*L ,H, y0+L)  #110
+ret.agregar_nodo(x0+22*L ,H, y0+L)  #111
+ret.agregar_nodo(x0+23*L ,H, y0+L)  #112
+ret.agregar_nodo(x0+24*L ,H, y0+L)  #113
+ret.agregar_nodo(x0+25*L ,H, y0+L)  #114
+ret.agregar_nodo(x0+26*L ,H, y0+L)  #115
+ret.agregar_nodo(x0+27*L ,H, y0+L)  #116
+ret.agregar_nodo(x0+28*L ,H, y0+L)  #117
+ret.agregar_nodo(x0+29*L ,H, y0+L)  ##### 118
 
 
 
 #Secciones de las barras
 
-seccion_grande = SeccionICHA("[]350x150x37.8", color="#3A8431")#, debug=True)
-seccion_chica = SeccionICHA("[]80x40x8", color="#A3500B")
+seccion_grande = SeccionICHA("H1100x350x400.4", color="#3A8431")#, debug=True)
+seccion_chica = SeccionICHA("H1100x350x400.4", color="#A3500B")
 h=0
 hh=30
+
+for nodos in range(30,60):
+    ret.agregar_barra(Barra(nodos,nodos+60,seccion_chica))
+    if nodos != 59:
+       ret.agregar_barra(Barra(nodos, nodos+61, seccion_chica))
+
+
+
+
 
 for x in range(30):
     ret.agregar_barra(Barra(h, hh, seccion_chica)) 
@@ -267,14 +275,15 @@ for x in range(29):
 
 
 #Crear restricciones
-for nodo in [0,5]:
+for nodo in [0,60]:
 	ret.agregar_restriccion(nodo, 0, 0)
 	ret.agregar_restriccion(nodo, 1, 0)
 	ret.agregar_restriccion(nodo, 2, 0)
 
-for nodo in [2,7]:
-	ret.agregar_restriccion(nodo, 1, 0)
-	ret.agregar_restriccion(nodo, 2, 0)
+for nodo in [89,29]:
+    ret.agregar_restriccion(nodo, 0, 0)
+    ret.agregar_restriccion(nodo, 1, 0)
+    ret.agregar_restriccion(nodo, 2, 0)
 
 
 
@@ -282,6 +291,7 @@ for nodo in [2,7]:
 #Visualizar y comprobar las secciones
 opciones_barras = {
 	# "ver_secciones_en_barras": True,
+    "ver_numeros_de_barras" : False,
 	"color_barras_por_seccion": True,
 }
 ver_reticulado_3d(ret,opciones_barras=opciones_barras)
@@ -297,12 +307,25 @@ f_D = ret.obtener_fuerzas()
 
 
 #Agregar fuerzas tablero
-ret.agregar_fuerza(0, 2, -F/4)
-ret.agregar_fuerza(5, 2, -F/4)
-ret.agregar_fuerza(2, 2, -F/4)
-ret.agregar_fuerza(7, 2, -F/4)
-ret.agregar_fuerza(1, 2, -F/2)
-ret.agregar_fuerza(6, 2, -F/2)
+
+F1=400*4*117.48*9.81
+F2=F1/2
+
+ret.agregar_fuerza(88, 2, -F2/4)
+ret.agregar_fuerza(60, 2, -F2/4)
+ret.agregar_fuerza(29, 2, -F2/4)
+ret.agregar_fuerza(0, 2, -F2/4)
+
+
+for nodo in range(1,29):
+	ret.agregar_fuerza(nodo, 2, -F2/54)
+	
+
+F4=94176.0
+for nodo in range(61,87):
+	ret.agregar_fuerza(nodo, 2, -F2/54)
+	
+   
 
 #Resolver el problema peso_propio
 ret.ensamblar_sistema(factor_peso_propio=[0.,0.,0], factor_cargas=1.0)
