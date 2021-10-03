@@ -50,7 +50,7 @@ Puede desprenderse de este procedimiento como las barras sin carga juegan un pap
 
 CONCLUSIONES
 
-Luego de los procesos y cambios en el diseño del puente reticular se puede concluir que el proceso computacional es de suma impotancia al momento de diseñar este tipo de elementos, debido a que muestran como se comporta la estructura y muestran comportamiento interno que no sería posible de ver al mommento de llevar la estrutura al campo.
+Luego de los procesos y cambios en el diseño del puente reticular se puede concluir que el proceso computacional es de suma importancia al momento de diseñar este tipo de elementos, debido a que muestran como se comporta la estructura y muestran comportamiento interno que no sería posible de ver al momento de llevar la estrutura al campo.
 
 Existen elementos dentro de reticulados que no juegan rol estructural pero de igual maner ason de suma importancia para que el sistema se comporte como la teoría y los softwares de diseño estructural quieren que se comporte.
 
