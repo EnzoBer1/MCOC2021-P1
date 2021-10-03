@@ -9,6 +9,11 @@ El siguente informe relatará e informará los avances en la confección, diseñ
 
 La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
 
+Para obtener la fuerza en cada nodo, se dividio el largo total del puente en 28, para luego conseguir la fuerza resultante en cada tablero, la que correspode a F1=400*4*
+(117.48/28)*9.81. Luego, esta fuerza se dividio en 4, ya que cada tablero cuenta con 4 nodos, por lo que para llegar a la fuerza total por cada nodo, F1 se multiplicó por 2 para la fuerza de los nodos de cada tablero, ya que 2/4 de la fuerza llega a todo un tablero.
+
+La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
+
 Todas los tipos de secciones fueron extraidos de la Tabla de Perfiles ICHA.
 
 RESULTADOS, DISCUSIONES Y ARREGLOS
@@ -44,15 +49,6 @@ Al correr el código con estas secciones, los resultados fueron:
 El nuevo peso de todo el puente fue de:
 
 ![Captura de Pantalla 2021-10-03 a la(s) 17 09 12](https://user-images.githubusercontent.com/89056734/135769901-d05f5e43-1f2f-4519-b834-09c3ecda8ef5.png)
-
-Puede desprenderse de este procedimiento como las barras sin carga juegan un papael fundamental en el desarrollo computacional del reticulado, no obstante, estructuralmente no cumplen el rol de elemento estructural debido a que no trasmiten carga. Etse resultado fue uno de los más sorpresivos y de los que más se logró aprender. El pensamiento lógico es que estos elementos deberían jugar un buen rol dentro de la estabilidad de la estructura.
-
-
-CONCLUSIONES
-
-Luego de los procesos y cambios en el diseño del puente reticular se puede concluir que el proceso computacional es de suma importancia al momento de diseñar este tipo de elementos, debido a que muestran como se comporta la estructura y muestran comportamiento interno que no sería posible de ver al momento de llevar la estrutura al campo.
-
-Existen elementos dentro de reticulados que no juegan rol estructural pero de igual maner ason de suma importancia para que el sistema se comporte como la teoría y los softwares de diseño estructural quieren que se comporte.
 
 
 
