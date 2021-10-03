@@ -45,6 +45,15 @@ El nuevo peso de todo el puente fue de:
 
 ![Captura de Pantalla 2021-10-03 a la(s) 17 09 12](https://user-images.githubusercontent.com/89056734/135769901-d05f5e43-1f2f-4519-b834-09c3ecda8ef5.png)
 
+Puede desprenderse de este procedimiento como las barras sin carga juegan un papael fundamental en el desarrollo computacional del reticulado, no obstante, estructuralmente no cumplen el rol de elemento estructural debido a que no trasmiten carga. Etse resultado fue uno de los más sorpresivos y de los que más se logró aprender. El pensamiento lógico es que estos elementos deberían jugar un buen rol dentro de la estabilidad de la estructura.
+
+
+CONCLUSIONES
+
+Luego de los procesos y cambios en el diseño del puente reticular se puede concluir que el proceso computacional es de suma impotancia al momento de diseñar este tipo de elementos, debido a que muestran como se comporta la estructura y muestran comportamiento interno que no sería posible de ver al mommento de llevar la estrutura al campo.
+
+Existen elementos dentro de reticulados que no juegan rol estructural pero de igual maner ason de suma importancia para que el sistema se comporte como la teoría y los softwares de diseño estructural quieren que se comporte.
+
 
 
 
