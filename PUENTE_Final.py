@@ -163,80 +163,88 @@ ret.agregar_nodo(x0+29*L ,H, y0+L)  ##### 118
 
 #Secciones de las barras
 
-seccion_grande = SeccionICHA("H1100x350x400.4", color="#3A8431")#, debug=True)
-seccion_chica = SeccionICHA("H1100x350x400.4", color="#A3500B")
+seccion_grande = SeccionICHA("H500x250x84.6", color="#3A8431")#, debug=True)
+seccion_mediana = SeccionICHA("H450x250x123.2", color="#A3500B")
+seccion_chica = SeccionICHA("H450x150x63.2", color="#A3500B")
+
+seccion_ultra_chica = SeccionICHA("[]200x200x24.2", color="#A3500B")
+seccion_casimuy_chica = SeccionICHA("[]15x15x0.4", color="#A3500B")
+seccion_mega_chica = SeccionICHA("[]12x12x0.3", color="#A3500B")
 h=0
 hh=30
 
-for nodos in range(30,60):
-    ret.agregar_barra(Barra(nodos,nodos+60,seccion_chica))
+for nodos in range(30,60): #Arriba eje z y diagonales arriba
+    ret.agregar_barra(Barra(nodos,nodos+60,seccion_mega_chica))
     if nodos != 59:
-       ret.agregar_barra(Barra(nodos, nodos+61, seccion_chica))
+       ret.agregar_barra(Barra(nodos, nodos+61, seccion_mega_chica))
 
 
 
 
 
-for x in range(30):
-    ret.agregar_barra(Barra(h, hh, seccion_chica)) 
+for x in range(30):             #Verticales izq
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica)) 
     h+=1
-    hh+=1
+    hh+=1              
 h=60
 hh=90
 
-for x in range(30):
-    ret.agregar_barra(Barra(h, hh, seccion_chica)) 
+for x in range(30):           #Dig izq creo
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica)) 
     h+=1
     hh+=1
 
 h=0
 hh=31
 
-for x in range(14):
-    ret.agregar_barra(Barra(h, hh, seccion_chica))
+for x in range(14):             ##diag derecha
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica))
     h+=2
-    ret.agregar_barra(Barra(h, hh, seccion_chica))
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica))
     hh+=2
-ret.agregar_barra(Barra(59, 28, seccion_chica))
+ret.agregar_barra(Barra(59, 28, seccion_ultra_chica))
 h=60
 hh=91
 
-for x in range(14):
-    ret.agregar_barra(Barra(h, hh, seccion_chica))
+for x in range(14):                         #Diag izq
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica))
     h+=2
-    ret.agregar_barra(Barra(h, hh, seccion_chica))
+    ret.agregar_barra(Barra(h, hh, seccion_ultra_chica))
     hh+=2
-ret.agregar_barra(Barra(119, 88, seccion_chica))
+ret.agregar_barra(Barra(119, 88, seccion_ultra_chica))
+
+
+
 
 h=0
 
-for x in range(29):
+for x in range(28):              #   #Longitudinal abajo  der
     ret.agregar_barra(Barra(h, h+1, seccion_chica))
     h+=1
-
+ret.agregar_barra(Barra(28, 29, seccion_grande))
 h=30
 
-for x in range(29):
-    ret.agregar_barra(Barra(h, h+1, seccion_chica))
+for x in range(29):                                      #Longitudinal arriba der
+    ret.agregar_barra(Barra(h, h+1, seccion_mediana))
     h+=1
 
 h=60
 
-for x in range(29):
+for x in range(28):                                 #Longitudinal abajo izq
     ret.agregar_barra(Barra(h, h+1, seccion_chica))
     h+=1
-    
+ret.agregar_barra(Barra(88, 89, seccion_grande))    
 h=90
 
-for x in range(29):
-    ret.agregar_barra(Barra(h, h+1, seccion_chica))
+for x in range(29):                                      #Longitudinal arriba izq
+    ret.agregar_barra(Barra(h, h+1, seccion_mediana))
     h+=1
 
 h=0
 hh=60
 
 for x in range(30):
-    ret.agregar_barra(Barra(h, hh, seccion_grande))
+    ret.agregar_barra(Barra(h, hh, seccion_casimuy_chica))
     h+=1
     
     hh+=1
@@ -245,15 +253,15 @@ h=0
 hh=60
 
 for x in range(30):
-    ret.agregar_barra(Barra(h, hh, seccion_grande))
+    ret.agregar_barra(Barra(h, hh, seccion_casimuy_chica))
     h+=1
     
     hh+=1
 h=0
 hh=61
 
-for x in range(29):
-    ret.agregar_barra(Barra(h, hh, seccion_grande))
+for x in range(29):                                    #Cruz abajo
+    ret.agregar_barra(Barra(h, hh, seccion_mega_chica))
     h+=1
     
     hh+=1
@@ -261,8 +269,8 @@ for x in range(29):
 h=1
 hh=60
 
-for x in range(29):
-    ret.agregar_barra(Barra(h, hh, seccion_grande))
+for x in range(29):#Cruz abajo
+    ret.agregar_barra(Barra(h, hh, seccion_mega_chica))
     h+=1
     
     hh+=1
@@ -308,22 +316,22 @@ f_D = ret.obtener_fuerzas()
 
 #Agregar fuerzas tablero
 
-F1=400*4*117.48*9.81
-F2=F1/2
+F1=400*4*(117.48/28)*9.81
+F2=F1/4
 
-ret.agregar_fuerza(88, 2, -F2/4)
-ret.agregar_fuerza(60, 2, -F2/4)
-ret.agregar_fuerza(29, 2, -F2/4)
-ret.agregar_fuerza(0, 2, -F2/4)
+ret.agregar_fuerza(88, 2, -F2)
+ret.agregar_fuerza(60, 2, -F2)
+ret.agregar_fuerza(29, 2, -F2)
+ret.agregar_fuerza(0, 2, -F2)
 
 
 for nodo in range(1,29):
-	ret.agregar_fuerza(nodo, 2, -F2/54)
+	ret.agregar_fuerza(nodo, 2, -2*F2)
 	
 
-F4=94176.0
+
 for nodo in range(61,87):
-	ret.agregar_fuerza(nodo, 2, -F2/54)
+	ret.agregar_fuerza(nodo, 2, -2*F2)
 	
    
 
