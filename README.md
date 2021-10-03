@@ -50,6 +50,12 @@ El nuevo peso de todo el puente fue de:
 
 ![Captura de Pantalla 2021-10-03 a la(s) 17 09 12](https://user-images.githubusercontent.com/89056734/135769901-d05f5e43-1f2f-4519-b834-09c3ecda8ef5.png)
 
+CONCLUSIONES
+
+Luego de los procesos y cambios en el diseño del puente reticular se puede concluir que el proceso computacional es de suma importancia al momento de diseñar este tipo de elementos reticulados, debido a que muestran como se comporta la estructura, ademas de mostrar el comportamiento interno, el cual ayuda a visualizar de mejor manera la estructura, y en el caso de necesitar reformas, estas se puedan automatizar y así entregar un proyecto mas optimizado y eficiente.
+
+Existen elementos dentro de reticulados que no juegan rol estructural pero de igual manera son de suma importancia para que el sistema se comporte como la teoría y los softwares de diseño estructural quieren que se comporte.
+
 
 
 
