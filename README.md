@@ -33,13 +33,18 @@ Tal como puedes verse, las barras de la cara inferior están al 80% de capacidad
 
 Para optimizar el puente y lograr la estructura más liviana y viable posible, se crearon secciones de distintos tamaños y formas (perfiles H y cajón) los cuales se implementaron según los factores de utilización anteriormente mencionados. Las secciones fueron las siguientes:
 
-![image](https://user-images.githubusercontent.com/89056734/135768753-984afa7b-f83c-4551-9a66-26b7efd356b3.png)
+![Captura de Pantalla 2021-10-03 a la(s) 17 09 34](https://user-images.githubusercontent.com/89056734/135769912-f2b40e9e-2d33-4831-acb7-3063b986d83b.png)
 
 Con estas modificaciones, el peso total del puente bajó significativamente a los 
 
 Al correr el código con estas secciones, los resultados fueron:
 
 ![image](https://user-images.githubusercontent.com/89056734/135768809-46d08f3f-0bd7-4c09-a649-2e760eca9179.png)
+
+El nuevo peso de todo el puente fue de:
+
+![Captura de Pantalla 2021-10-03 a la(s) 17 09 12](https://user-images.githubusercontent.com/89056734/135769901-d05f5e43-1f2f-4519-b834-09c3ecda8ef5.png)
+
 
 
 
