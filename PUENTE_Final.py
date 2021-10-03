@@ -167,7 +167,7 @@ seccion_grande = SeccionICHA("H500x250x84.6", color="#3A8431")#, debug=True)
 seccion_mediana = SeccionICHA("H450x250x123.2", color="#A3500B")
 seccion_chica = SeccionICHA("H450x150x63.2", color="#A3500B")
 
-seccion_ultra_chica = SeccionICHA("[]200x200x24.2", color="#A3500B")
+seccion_ultra_chica = SeccionICHA("[]200x70x23.3", color="#A3500B")
 seccion_casimuy_chica = SeccionICHA("[]15x15x0.4", color="#A3500B")
 seccion_mega_chica = SeccionICHA("[]12x12x0.3", color="#A3500B")
 h=0
