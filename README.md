@@ -9,10 +9,10 @@ El siguente informe relatará e informará los avances en la confección, diseñ
 
 La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
 
+La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
+
 Para obtener la fuerza en cada nodo, se dividio el largo total del puente en 28, para luego conseguir la fuerza resultante en cada tablero, la que correspode a F1=400*4*
 (117.48/28)*9.81. Luego, esta fuerza se dividio en 4, ya que cada tablero cuenta con 4 nodos, por lo que para llegar a la fuerza total por cada nodo, F1 se multiplicó por 2 para la fuerza de los nodos de cada tablero, ya que 2/4 de la fuerza llega a todo un tablero.
-
-La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
 
 Todas los tipos de secciones fueron extraidos de la Tabla de Perfiles ICHA.
 
