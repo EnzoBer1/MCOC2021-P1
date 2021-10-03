@@ -3,7 +3,9 @@ Optimización estructural de un puente reticular
 
 INTRODUCCIÓN
 
-El siguente informe relatará e informará los avances en la confección, diseño y optimización de un puente reticular, el cual cruza un canal de 117 metros de largo, teniendo en cuenta 4 metros de ancho y 2 puntos de apoyo. Se considerará tanto crga viva como carga muerta, distintas combinaciones de carga según el método LRFD y se analizará su estabilidad estructural (si es viable o no), sus deformaciones y desempeño frente a cada combinación de carga y los factores de utilización de cada elemento, se tratará de conseguir que los FU de cada elementos estén lo más cercano a 1 posible, de tal manera de aprovechar toda la capacidad de las secciones.
+El siguente informe relatará e informará los avances en la confección, diseño y optimización de un puente reticular, el cual cruza un canal de 117 metros de largo, teniendo en cuenta 4 metros de ancho y 2 puntos de apoyo. Se considerará tanto crga viva como carga muerta, distintas combinaciones de carga según el método LRFD y se analizará su estabilidad estructural (si es viable o no), sus deformaciones y desempeño frente a cada combinación de carga y los factores de utilización de cada elemento, se tratará de conseguir que los FU de cada elementos estén lo más cercano a 1 posible, de tal manera de aprovechar toda la capacidad de las secciones. El puente estará situado en el siguente canal:
+
+![image](https://user-images.githubusercontent.com/89056734/135768901-00220b38-52b9-4d1f-8a31-ddc4234bf6dc.png)
 
 La carga viva sobre el tablero del puente serña de 400 kg/m y para la combincación de carga se usará 1,2D + 1,6L.
 
@@ -32,6 +34,8 @@ Tal como puedes verse, las barras de la cara inferior están al 80% de capacidad
 Para optimizar el puente y lograr la estructura más liviana y viable posible, se crearon secciones de distintos tamaños y formas (perfiles H y cajón) los cuales se implementaron según los factores de utilización anteriormente mencionados. Las secciones fueron las siguientes:
 
 ![image](https://user-images.githubusercontent.com/89056734/135768753-984afa7b-f83c-4551-9a66-26b7efd356b3.png)
+
+Con estas modificaciones, el peso total del puente bajó significativamente a los 
 
 Al correr el código con estas secciones, los resultados fueron:
 
